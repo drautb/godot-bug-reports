@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://icon_inverted.png" type="Texture" id=2]
+[ext_resource path="res://Main.gd" type="Script" id=3]
+
+[node name="Main" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 141.0
+margin_top = 264.0
+margin_right = 181.0
+margin_bottom = 304.0
+texture_normal = ExtResource( 1 )
+texture_hover = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+margin_right = 83.0
+margin_bottom = 58.0
+dialog_text = "Clicked!"
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_TextureButton_pressed"]
